@@ -1,0 +1,120 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://DynamicWater/DynamicWater.shader" type="Shader" id=1]
+[ext_resource path="res://DynamicWater/Water.gd" type="Script" id=2]
+[ext_resource path="res://Common/Background.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Common/JungleTiles.tres" type="TileSet" id=4]
+[ext_resource path="res://icon.png" type="Texture" id=5]
+[ext_resource path="res://Common/Player.tscn" type="PackedScene" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 47.5859, 5.04416 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 62.5729, 5.04416 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 191.43, 5.04416 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 94.8821, 5.04416 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5.76651, 43.164 )
+
+[sub_resource type="OpenSimplexNoise" id=6]
+
+[sub_resource type="NoiseTexture" id=7]
+noise = SubResource( 6 )
+
+[sub_resource type="OpenSimplexNoise" id=8]
+seed = 1
+
+[sub_resource type="NoiseTexture" id=9]
+noise = SubResource( 8 )
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 1 )
+shader_param/u_scale = Vector2( 1, 1 )
+shader_param/u_tint = Color( 0, 0.133333, 1, 0.196078 )
+shader_param/u_water_top = 0.2
+shader_param/u_surface_height = 0.03
+shader_param/u_surface_color = Color( 1, 1, 1, 0.5 )
+shader_param/u_entry_point = Vector2( -1, -1 )
+shader_param/u_enter_time = 0.0
+shader_param/u_noise1 = SubResource( 7 )
+shader_param/u_noise2 = SubResource( 9 )
+
+[node name="MainScene" type="Node"]
+
+[node name="Background" parent="." instance=ExtResource( 3 )]
+
+[node name="Wall" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 458754, 1, 2, 458755, 0, 65539, 458756, 0, 327681, 458757, 0, 65540, 458758, 0, 327681, 458759, 0, 327681, 524290, 1, 2, 524291, 1, 131075, 524292, 1, 65538, 524293, 1, 131075, 524294, 1, 65539, 524295, 1, 2 )
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327690, 2, 1, 393216, 0, 65537, 393217, 0, 65537, 393218, 0, 65538, 393223, 0, 65536, 393224, 0, 65537, 393225, 0, 65537, 393226, 2, 65537, 393227, 2, 1, 458752, 1, 2, 458753, 1, 65538, 458754, 1, 1, 458759, 1, 0, 458760, 1, 131075, 458761, 1, 65539, 458762, 2, 131073, 458763, 2, 65537, 458764, 2, 1, 524288, 1, 131075, 524289, 1, 2, 524290, 1, 65537, 524295, 1, 65536, 524296, 1, 2, 524297, 1, 2, 524298, 1, 131075, 524299, 2, 131073, 524300, 0, 327681, 524301, 0, 327681, 524302, 0, 327681, 524303, 0, 327681, 524304, 0, 65540, 524305, 0, 196611, 524306, 0, 196609, 524307, 0, 196609, 524308, 0, 196609, 524309, 0, 196609, 524310, 0, 196609, 524311, 0, 196609, 524312, 0, 196609, 524313, 0, 196609, 524314, 0, 196612, 524315, 0, 65538, 589824, 1, 2, 589825, 1, 2, 589826, 0, 196609, 589827, 0, 196609, 589828, 0, 196609, 589829, 0, 196609, 589830, 0, 196609, 589831, 0, 196609, 589832, 1, 65538, 589833, 1, 2, 589834, 1, 2, 589835, 1, 2, 589836, 1, 2, 589837, 1, 131075, 589838, 1, 2, 589839, 1, 2, 589840, 1, 65538, 589841, 1, 2, 589842, 1, 2, 589843, 1, 131074, 589844, 1, 65538, 589845, 1, 2, 589846, 1, 2, 589847, 1, 65539, 589848, 1, 131075, 589849, 1, 2, 589850, 1, 2, 589851, 1, 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Ground"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 47.7195, 194.299 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 272.866, 196.967 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 449.297, 262.225 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 702.951, 262.227 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 159.791, 289.973 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 88.1817, 245.682 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Ground/StaticBody2D"]
+position = Vector2( 231.148, 244.878 )
+shape = SubResource( 5 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Ground/StaticBody2D"]
+position = Vector2( 331.043, 202.412 )
+build_mode = 1
+polygon = PoolVector2Array( -27.0432, -10.0613, -10.868, -10.2139, 55.6644, 54.7925, 70.7716, 54.7925, 55.5118, 61.049, -10.868, -3.65224 )
+
+[node name="Foreground" type="TileMap" parent="."]
+tile_set = ExtResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327680, 0, 1, 327681, 0, 1, 327682, 0, 2, 327687, 0, 0, 327688, 0, 1, 327689, 0, 2, 458764, 0, 262145, 458765, 0, 262145, 458766, 0, 262145, 458767, 0, 262145, 458768, 0, 4, 458769, 0, 131075, 458770, 0, 131073, 458771, 0, 131073, 458772, 0, 131073, 458773, 0, 131073, 458774, 0, 131073, 458775, 0, 131073, 458776, 0, 131073, 458777, 0, 131073, 458778, 0, 131076, 458779, 0, 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1.07196, 18.7484 )
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.5, 0.5 )
+
+[node name="Player" parent="." instance=ExtResource( 6 )]
+position = Vector2( 40.3969, 150.551 )
+
+[node name="Water" type="Sprite" parent="."]
+material = SubResource( 10 )
+position = Vector2( 163.21, 250.225 )
+scale = Vector2( 1.43475, 0.641405 )
+z_index = 10
+texture = ExtResource( 5 )
+script = ExtResource( 2 )
