@@ -1,34 +1,36 @@
 [remap]
 
 importer="texture"
-type="StreamTexture"
-path="res://.import/noise2.png-eb3e6999129a726d6dab4e5d87135959.stex"
+type="CompressedTexture2D"
+uid="uid://3p7awkv3bqed"
+path.s3tc="res://.godot/imported/noise2.png-e1556f29c9e9d87c8007a6a9606ebecc.s3tc.ctex"
+path.etc2="res://.godot/imported/noise2.png-e1556f29c9e9d87c8007a6a9606ebecc.etc2.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc", "etc2"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://Assets/noise2.png"
-dest_files=[ "res://.import/noise2.png-eb3e6999129a726d6dab4e5d87135959.stex" ]
+source_file="res://assets/noise2.png"
+dest_files=["res://.godot/imported/noise2.png-e1556f29c9e9d87c8007a6a9606ebecc.s3tc.ctex", "res://.godot/imported/noise2.png-e1556f29c9e9d87c8007a6a9606ebecc.etc2.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
-compress/hdr_mode=0
+compress/hdr_compression=1
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=1
-flags/filter=true
-flags/mipmaps=false
-flags/anisotropic=false
-flags/srgb=2
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/HDR_as_SRGB=false
-process/invert_color=false
-stream=false
-size_limit=0
-detect_3d=true
-svg/scale=1.0
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

@@ -1,34 +1,34 @@
 [remap]
 
 importer="texture"
-type="StreamTexture"
-path="res://.import/spr_m_traveler_run_0004_2.png-28e694f76bb11a007a55ddc5c540cb25.stex"
+type="CompressedTexture2D"
+uid="uid://dv7wce28wupxg"
+path="res://.godot/imported/spr_m_traveler_run_0004_2.png-7cda959ae838f530e673abacf0ab957e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Traveler/run/spr_m_traveler_run_0004_2.png"
-dest_files=[ "res://.import/spr_m_traveler_run_0004_2.png-28e694f76bb11a007a55ddc5c540cb25.stex" ]
+source_file="res://assets/traveler/run/spr_m_traveler_run_0004_2.png"
+dest_files=["res://.godot/imported/spr_m_traveler_run_0004_2.png-7cda959ae838f530e673abacf0ab957e.ctex"]
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
-compress/hdr_mode=0
+compress/hdr_compression=1
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=0
-flags/filter=false
-flags/mipmaps=false
-flags/anisotropic=false
-flags/srgb=2
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
 process/fix_alpha_border=true
 process/premult_alpha=false
-process/HDR_as_SRGB=false
-process/invert_color=false
-stream=false
-size_limit=0
-detect_3d=false
-svg/scale=1.0
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1bbvw0v5vwfs"
-path="res://.godot/imported/spr_m_traveler_idle_0003_5.png-e1f8682d9812323a140cd639fa4af9cc.ctex"
+uid="uid://b4xebjdqwrmfi"
+path="res://.godot/imported/1px.png-8e5c138039fb15d6db85f5ee737ca70c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/traveler/idle/spr_m_traveler_idle_0003_5.png"
-dest_files=["res://.godot/imported/spr_m_traveler_idle_0003_5.png-e1f8682d9812323a140cd639fa4af9cc.ctex"]
+source_file="res://assets/1px.png"
+dest_files=["res://.godot/imported/1px.png-8e5c138039fb15d6db85f5ee737ca70c.ctex"]
 
 [params]
 
