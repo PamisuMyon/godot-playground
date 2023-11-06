@@ -1,0 +1,10 @@
+res://default_env.tres
+res://PlatformerDash/Levels/TestScene.tscn
+res://PlatformerDash/Effects/DashShadowParticlesMaterial.tres
+res://PlatformerDash/Effects/DashSparkParticlesMaterial.tres
+res://PlatformerDash/Effects/DashImpactShaderMaterial.tres
+res://PlatformerDash/Player/Player.gd
+res://PlatformerDash/Effects/DashImpact.tscn
+res://PlatformerDash/Effects/DashImpact.gd
+res://PlatformerDash/Levels/Camera.gd
+res://PlatformerDash/Effects/DashSpark.tscn

@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://8eqsjuuyipkf"]
+
+[ext_resource type="TileSet" path="res://PlatformerDash/Levels/ForestTileSet.tres" id="1"]
+[ext_resource type="PackedScene" path="res://PlatformerDash/Levels/Background.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://PlatformerDash/Player/Player.tscn" id="3"]
+[ext_resource type="Script" path="res://PlatformerDash/Levels/Camera.gd" id="4"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(349.533, 14)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(66, 16)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(68, 84.131)
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(17, 221)
+
+[node name="TestScene" type="Node2D"]
+position = Vector2(-5, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(275.154, 150.309)
+zoom = Vector2(2, 2)
+script = ExtResource("4")
+
+[node name="Background" parent="." instance=ExtResource("2")]
+offset = Vector2(0, -42)
+transform = Transform2D(1, 0, 0, 1, 0, -42)
+
+[node name="ParallaxLayer" parent="Background" index="0"]
+motion_scale = Vector2(1, 1)
+
+[node name="ParallaxLayer2" parent="Background" index="1"]
+motion_scale = Vector2(1, 1)
+
+[node name="ParallaxLayer3" parent="Background" index="2"]
+motion_scale = Vector2(1, 1)
+
+[node name="ParallaxLayer4" parent="Background" index="3"]
+motion_scale = Vector2(1, 1)
+
+[node name="ParallaxLayer5" parent="Background" index="4"]
+motion_scale = Vector2(1, 1)
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource("1")
+format = 2
+layer_0/tile_data = PackedInt32Array(655379, 0, 0, 655380, 131072, 0, 655381, 131072, 0, 655382, 131072, 0, 655383, 262144, 0, 720915, 0, 2, 720916, 65536, 1, 720917, 131072, 1, 720918, 196608, 1, 720919, 262144, 1, 786451, 0, 2, 786452, 65536, 2, 786453, 131072, 2, 786454, 196608, 2, 786455, 262144, 1, 851987, 0, 2, 851988, 65536, 2, 851989, 131072, 2, 851990, 196608, 2, 851991, 65537, 4, 851992, 131073, 4, 851993, 131073, 4, 851994, 131073, 4, 851995, 262144, 0, 917523, 0, 2, 917524, 65536, 2, 917525, 131072, 2, 917526, 1, 5, 917527, 131072, 1, 917528, 131072, 1, 917529, 131072, 1, 917530, 196608, 1, 917531, 65537, 4, 917532, 131073, 4, 917533, 131073, 4, 917534, 131073, 4, 917535, 131073, 4, 917536, 131073, 4, 917537, 131073, 4, 1048573, 2, 0, 1048574, 2, 0, 1048575, 2, 0, 983040, 2, 0, 983041, 2, 0, 983042, 2, 0, 983043, 2, 0, 983044, 2, 0, 983045, 65538, 0, 983046, 65538, 0, 983047, 65538, 0, 983048, 131074, 0, 983049, 131074, 0, 983050, 196610, 0, 983051, 262146, 0, 983052, 262146, 0, 983053, 262146, 0, 983054, 262146, 0, 983055, 458754, 0, 983056, 131074, 0, 983057, 524290, 0, 983058, 589826, 0, 983059, 262145, 4, 983060, 65536, 2, 983061, 131072, 2, 983062, 131072, 2, 983063, 131072, 2, 983064, 131072, 2, 983065, 131072, 2, 983066, 1, 5, 983067, 131072, 1, 983068, 131072, 1, 983069, 131072, 1, 983070, 131072, 1, 983071, 131072, 1, 983072, 131072, 1, 983073, 131072, 1, 1114109, 131072, 1, 1114110, 131072, 1, 1114111, 131072, 1, 1048576, 131072, 1, 1048577, 131072, 1, 1048578, 131072, 1, 1048579, 131072, 1, 1048580, 131072, 1, 1048581, 131072, 1, 1048582, 131072, 1, 1048583, 131072, 1, 1048584, 131072, 1, 1048585, 131072, 1, 1048586, 131072, 1, 1048587, 131072, 1, 1048588, 131072, 1, 1048589, 131072, 1, 1048590, 131072, 1, 1048591, 131072, 1, 1048592, 131072, 1, 1048593, 131072, 1, 1048594, 131072, 1, 1048595, 131072, 1, 1048596, 327681, 5, 1048597, 131072, 2, 1048598, 131072, 2, 1048599, 131072, 2, 1048600, 131072, 2, 1048601, 131072, 2, 1048602, 131072, 2, 1048603, 131072, 2, 1048604, 131072, 2, 1048605, 131072, 2, 1048606, 131072, 2, 1048607, 131072, 2, 1048608, 131072, 2, 1048609, 131072, 2, 1179645, 131072, 2, 1179646, 131072, 2, 1179647, 131072, 2, 1114112, 131072, 2, 1114113, 131072, 2, 1114114, 131072, 2, 1114115, 131072, 2, 1114116, 131072, 2, 1114117, 131072, 2, 1114118, 131072, 2, 1114119, 131072, 2, 1114120, 131072, 2, 1114121, 131072, 2, 1114122, 131072, 2, 1114123, 131072, 2, 1114124, 131072, 2, 1114125, 131072, 2, 1114126, 131072, 2, 1114127, 131072, 2, 1114128, 131072, 2, 1114129, 131072, 2, 1114130, 131072, 2, 1114131, 131072, 2, 1114132, 131072, 2, 1114133, 131072, 2, 1114134, 131072, 2, 1114135, 131072, 2, 1114136, 131072, 2, 1114137, 131072, 2, 1114138, 131072, 2, 1114139, 131072, 2, 1114140, 131072, 2, 1114141, 131072, 2, 1114142, 131072, 2, 1114143, 131072, 2, 1114144, 131072, 2, 1114145, 131072, 2, 1245181, 131072, 2, 1245182, 131072, 2, 1245183, 131072, 2, 1179648, 131072, 2, 1179649, 131072, 2, 1179650, 131072, 2, 1179651, 131072, 2, 1179652, 131072, 2, 1179653, 131072, 2, 1179654, 131072, 2, 1179655, 131072, 2, 1179656, 131072, 2, 1179657, 131072, 2, 1179658, 131072, 2, 1179659, 131072, 2, 1179660, 131072, 2, 1179661, 131072, 2, 1179662, 131072, 2, 1179663, 131072, 2, 1179664, 131072, 2, 1179665, 131072, 2, 1179666, 131072, 2, 1179667, 131072, 2, 1179668, 131072, 2, 1179669, 131072, 2, 1179670, 131072, 2, 1179671, 131072, 2, 1179672, 131072, 2, 1179673, 131072, 2, 1179674, 131072, 2, 1179675, 131072, 2, 1179676, 131072, 2, 1179677, 131072, 2, 1179678, 131072, 2, 1179679, 131072, 2, 1179680, 131072, 2, 1179681, 131072, 2)
+
+[node name="GroundBody" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GroundBody"]
+position = Vector2(134.766, 255)
+shape = SubResource("1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GroundBody"]
+position = Vector2(596.467, 238)
+shape = SubResource("1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GroundBody"]
+position = Vector2(408, 228)
+shape = SubResource("2")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="GroundBody"]
+position = Vector2(343, 210.935)
+shape = SubResource("3")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="GroundBody"]
+position = Vector2(-3.5, 142.5)
+shape = SubResource("4")
+
+[node name="Player" parent="." instance=ExtResource("3")]
+position = Vector2(128.602, 158.363)
+max_dash_times = 2
+
+[connection signal="player_dash" from="Player" to="Camera2D" method="_on_player_dash"]
+
+[editable path="Background"]

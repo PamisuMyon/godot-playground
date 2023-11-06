@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://7dosvh1yme4r"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+uniform float u_radius = .0;	// 波动半径
+
+void fragment() {
+	float len = length(UV - vec2(.5, .5));	// 当前像素距中心距离
+	float width = .1 * (1. + u_radius * .5);	// 波动宽度随半径增大
+	float radius = u_radius - width;	// 修正数值
+	// 波动偏移量
+	float offset = smoothstep(radius - width, radius, len) - smoothstep(radius, radius + width, len);
+	offset *= .02;	// 缩小数值
+	offset /= 1. + u_radius * 1.2;	// 衰减
+	offset *= 1. - smoothstep(0, .6, u_radius);	// 范围控制
+	// 屏幕纹理采样
+	vec4 color = texture(SCREEN_TEXTURE, SCREEN_UV + offset);
+	COLOR = color;
+}"
+
+[resource]
+shader = SubResource("1")
+shader_parameter/u_radius = 0.0

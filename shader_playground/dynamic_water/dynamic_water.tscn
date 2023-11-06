@@ -1,0 +1,73 @@
+[gd_scene load_steps=11 format=3 uid="uid://beu5h34ihxu57"]
+
+[ext_resource type="Texture2D" uid="uid://b4xebjdqwrmfi" path="res://assets/1px.png" id="1_jvmh1"]
+[ext_resource type="TileSet" uid="uid://78k2kb0ib7ox" path="res://generic/platformer_2d/tile_set.tres" id="2_hg4ec"]
+[ext_resource type="PackedScene" uid="uid://bsfp6kw6wh1b4" path="res://generic/platformer_2d/platformer_2d_player.tscn" id="3_fofyl"]
+[ext_resource type="Shader" path="res://dynamic_water/dynamic_water.gdshader" id="4_vqhjm"]
+[ext_resource type="Script" path="res://dynamic_water/water.gd" id="6_nfrn4"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_pul2c"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ag357"]
+seamless = true
+noise = SubResource("FastNoiseLite_pul2c")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cw24x"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_s1i3w"]
+seamless = true
+noise = SubResource("FastNoiseLite_cw24x")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uh3mh"]
+shader = ExtResource("4_vqhjm")
+shader_parameter/u_scale = Vector2(1, 1)
+shader_parameter/u_tint = Color(0, 0.133333, 1, 0.196078)
+shader_parameter/u_water_top = 0.2
+shader_parameter/u_surface_height = 0.03
+shader_parameter/u_surface_color = Color(1, 1, 1, 0.501961)
+shader_parameter/u_entry_point = Vector2(-1, -1)
+shader_parameter/u_enter_time = 0.0
+shader_parameter/u_noise1 = SubResource("NoiseTexture2D_ag357")
+shader_parameter/u_noise2 = SubResource("NoiseTexture2D_s1i3w")
+
+[node name="Platformer2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(576, 324)
+
+[node name="Sky" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+self_modulate = Color(0.482353, 0.796078, 0.882353, 1)
+position = Vector2(288, 162)
+scale = Vector2(576, 324)
+texture = ExtResource("1_jvmh1")
+
+[node name="Background" type="TileMap" parent="."]
+tile_set = ExtResource("2_hg4ec")
+format = 2
+layer_0/tile_data = PackedInt32Array(655363, 131075, 0, 655370, 131075, 0, 327683, 65537, 4, 393219, 65537, 5, 458755, 131075, 0, 524291, 131075, 0, 589827, 131075, 0, 327684, 65537, 4, 393220, 65537, 5, 458756, 131075, 0, 524292, 131075, 0, 327685, 65537, 4, 393221, 65537, 5, 458757, 131075, 0, 524293, 131075, 0, 327686, 65537, 4, 393222, 65537, 5, 458758, 131075, 0, 524294, 131075, 0, 327687, 65537, 4, 393223, 65537, 5, 458759, 131075, 0, 524295, 131075, 0, 327688, 65537, 4, 393224, 65537, 5, 458760, 131075, 0, 524296, 131075, 0, 327689, 65537, 4, 393225, 65537, 5, 458761, 131075, 0, 524297, 131075, 0, 327690, 65537, 4, 393226, 65537, 5, 458762, 131075, 0, 524298, 131075, 0, 589834, 131075, 0)
+
+[node name="Ground" type="TileMap" parent="."]
+tile_set = ExtResource("2_hg4ec")
+format = 2
+layer_0/tile_data = PackedInt32Array(393216, 131075, 0, 458752, 131075, 0, 524288, 131075, 0, 589824, 131075, 0, 655360, 131075, 0, 393217, 131075, 0, 458753, 131075, 0, 524289, 131075, 0, 589825, 131075, 0, 655361, 131075, 0, 393218, 131075, 0, 458754, 131075, 0, 524290, 131075, 0, 589826, 131075, 0, 655362, 131075, 0, 393219, 65539, 1, 458755, 65539, 2, 524291, 1, 1, 589827, 3, 1, 655363, 3, 2, 589828, 196610, 0, 655364, 196610, 0, 589829, 196610, 0, 655365, 196610, 0, 589830, 196610, 0, 655366, 196610, 0, 589831, 196610, 0, 655367, 196610, 0, 589832, 196610, 0, 655368, 196610, 0, 589833, 196610, 0, 655369, 196610, 0, 393226, 3, 1, 458762, 3, 2, 524298, 131073, 1, 589834, 65539, 1, 655370, 65539, 2, 393227, 131075, 0, 458763, 131075, 0, 524299, 131075, 0, 589835, 131075, 0, 655371, 131075, 0, 393228, 131075, 0, 458764, 131075, 0, 524300, 131075, 0, 589836, 131075, 0, 655372, 131075, 0, 393229, 131075, 0, 458765, 131075, 0, 524301, 131075, 0, 589837, 131075, 0, 655373, 131075, 0, 393230, 131075, 0, 458766, 131075, 0, 524302, 131075, 0, 589838, 131075, 0, 655374, 131075, 0, 393231, 131075, 0, 458767, 131075, 0, 524303, 131075, 0, 589839, 131075, 0, 655375, 131075, 0, 393232, 131075, 0, 458768, 131075, 0, 524304, 131075, 0, 589840, 131075, 0, 655376, 131075, 0, 393233, 131075, 0, 458769, 131075, 0, 524305, 131075, 0, 589841, 131075, 0, 655377, 131075, 0, 327680, 65537, 1, 327681, 65537, 1, 327682, 65537, 1, 327683, 131073, 1, 524292, 65537, 1, 524293, 65537, 1, 524294, 65537, 1, 524295, 65537, 1, 524296, 65537, 1, 524297, 65537, 1, 327690, 1, 1, 327691, 65537, 1, 327692, 65537, 1, 327693, 65537, 1, 327694, 65537, 1, 327695, 65537, 1, 327696, 65537, 1, 327697, 65537, 1)
+
+[node name="Foreground" type="TileMap" parent="."]
+tile_set = ExtResource("2_hg4ec")
+format = 2
+layer_0/tile_data = PackedInt32Array(458755, 1, 0, 458756, 65537, 0, 458757, 65537, 0, 458758, 65537, 0, 458759, 65537, 0, 458760, 65537, 0, 458761, 65537, 0, 458762, 131073, 0, 262144, 65537, 0, 262145, 65537, 0, 262146, 65537, 0, 262147, 65537, 0, 262154, 1, 0, 262155, 65537, 0, 262156, 65537, 0, 262157, 65537, 0, 262158, 65537, 0, 262159, 65537, 0, 262160, 65537, 0, 262161, 65537, 0)
+
+[node name="PlatformerPlayer2D" parent="." instance=ExtResource("3_fofyl")]
+position = Vector2(60, 88)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+zoom = Vector2(2, 2)
+
+[node name="Water" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_uh3mh")
+position = Vector2(224, 206.438)
+scale = Vector2(224, 117.125)
+texture = ExtResource("1_jvmh1")
+script = ExtResource("6_nfrn4")
